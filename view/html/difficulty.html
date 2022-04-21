@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+{{ template "head" . }}
+<body>
+    <h1 class="text-center">Hangman-web</h1>
+
+	<div class="window">
+		<div class="topbar">
+			<div class="title text-center">
+				Hangman web - Difficulty choice
+			</div>
+			<div class="buttons">
+				<div class="green">
+				</div>
+				<div class="yellow">
+				</div>
+				<div class="red">
+					<a class="rickroll" href="https://youtu.be/dQw4w9WgXcQ" target="_blank"></a>
+				</div>
+			</div>
+		</div>
+		<div class="content">
+			<p class="text-center">Choisissez votre difficulté</p>
+			<div class="choices">
+				<form action="/reset" method="POST">
+					<button type="submit" class="button choice" name="difficulty" value="easy">Facile : mots courts et simples</button>
+				</form>
+				<form action="/reset" method="POST">
+					<button type="submit" class="button choice" name="difficulty" value="medium">Moyen : mots moyennement longs</button>
+				</form>
+				<form action="/reset" method="POST">
+					<button type="submit" class="button choice" name="difficulty" value="hard">Difficile : mots longs et complexes</button>
+				</form>
+			</div>
+			<p class="leaderboard text-center"><a href="/leaderboard">Voir le LeaderBoard</a></p>
+		</div>
+	</div>
+	<div class="bottom">
+		<p class="credits text-center">Projet par Thomas WEBER, Pierre-Hervé POIRIER, Luka GARCIA</p>
+	</div>
+</body>
+</html>

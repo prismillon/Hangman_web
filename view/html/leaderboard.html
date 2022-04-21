@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+{{ template "head" . }}
+<body>
+    <h1 class="text-center" >Hangman-web</h1>
+
+    <div class="window">
+        <div class="topbar">
+            <div class="title text-center">
+                Hangman web - Leaderboard
+            </div>
+            <div class="buttons">
+                <div class="green">
+                </div>
+                <div class="yellow">
+                </div>
+                <div class="red">
+                    <a class="rickroll" href="https://youtu.be/dQw4w9WgXcQ" target="_blank"></a>
+                </div>
+            </div>
+        </div>
+        <div class="content">
+            <ol class="scoreboard">
+                {{range .Scores}}
+                <div class="score-line">
+                    <p class="name">{{index . 0}}</p>
+                    <p class="score">{{index . 1}}</p>
+                </div>
+                {{end}}
+            </ol>
+            <p class="text-center"><a href="/">Go Back</a></p>
+        </div>
+    </div>
+    <div class="bottom">
+		<p class="credits text-center">Projet par Thomas WEBER, Pierre-Hervé POIRIER, Luka GARCIA</p>
+	</div>
+</body>
+</html>

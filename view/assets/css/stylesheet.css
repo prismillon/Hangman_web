@@ -1,0 +1,254 @@
+/* Initalisation de la page */
+
+body {
+    margin: 0px;
+    width: 100%;
+    height: 100vh;
+    background-color: #1D1D1D;
+    display: table;
+}
+
+/* Polices d'écriture */
+
+h1, h2, h3, h4, h5, h6, p, a, label {
+    font-family: 'IBM Plex Mono', monospace;
+    color: #CCCCCC
+}
+
+h1 {
+    font-weight: 400;
+    font-size: 64px;
+    text-transform: lowercase;
+}
+
+.text-center {
+    text-align: center;
+}
+
+/* Sections */
+
+section.left-side, section.right-side {
+    float: left;
+    height: 100vh;
+}
+
+section.left-side {
+    background-color: #232323;
+    width: 60%;
+}
+
+section.right-side {
+    width: 40%;
+}
+
+section.right-side img {
+    display: block;
+    user-select: none;
+    margin: 100px auto 0 auto;
+}
+
+section.right-side p {
+    text-align: center;
+    font-weight: 500;
+    font-size: 18px
+}
+
+/* Fenêtre de jeu */
+
+.window {
+    background: #292929;
+    width: 50vw;
+    height: 50vh;
+    margin: auto;
+    margin-top: 12.5vh;
+    border: 1px solid #191919;
+    border-radius: 6px;
+}
+
+.window .topbar {
+    background-color: #191919;
+    width: 100%;
+    height: 20px;
+    border-top: 1px solid #191919;
+    border-bottom: 1px solid #191919;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    display:flex;
+    user-select: none;
+}
+
+.window .topbar .title {
+    font-family: 'IBM Plex Mono', monospace;
+    color: #CCCCCC;
+    font-size: 11pt;
+    line-height: 20px;
+    width: 46vw;
+}
+
+.window .topbar .buttons {
+    padding-top: 3px;
+    float: right;
+    line-height: 0px;
+    display:inline;
+}
+
+.window .topbar .buttons .red, .window .topbar .buttons .yellow, .window .topbar .buttons .green {
+    width: 11px;
+    height: 11px;
+    margin-right: 4px;
+    border-radius: 50%;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.window .topbar .buttons .red {
+    background-color: #ff5c5c;
+}
+
+.window .topbar .buttons .red:active {
+    background-color: #c14645;
+}
+
+.window .topbar .buttons .yellow {
+    background-color: #ffbd4c;
+}
+
+.window .topbar .buttons .yellow:active {
+    background-color: #c08e38;
+}
+
+.window .topbar .buttons .green {
+    background-color: #00ca56;
+}
+
+.window .topbar .buttons .green:active {
+    background-color: #029740;
+}
+
+.window .content {
+    padding: 10px;
+}
+
+.rickroll {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+/* Content */
+
+.window .content #current-word {
+    font-size: 35px;
+}
+
+.window .content input.entry {
+    background-color: transparent;
+    border: 0px solid transparent;
+    border-bottom: 1px solid #232323;
+    outline: none;
+    font-family: 'IBM Plex Mono', monospace;
+    color: #CCCCCC;
+    font-size: 18px;
+}
+
+.window .content .button {
+    margin-left: 30px;
+    padding: 5px 15px;
+    border: 0px solid transparent;
+    border-radius: 15px;
+    font-family: 'IBM Plex Mono', monospace;
+    background-color: #CCCCCC;
+    font-size: 16px;
+    font-weight: 700;
+    color: #292929;
+    cursor: pointer;
+}
+
+/* Choices */
+
+.choices .choice {
+    margin: 0px auto 10px auto !important;
+    display: flex;
+}
+
+/* Lettres utilisées */
+
+.used-letters {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+    width: fit-content;
+    user-select: none;
+}
+
+.used-letters .letter {
+    background-color: #292929;
+    border-radius: 15px;
+    display:inline;
+    padding: 10px 15px;
+}
+
+.used-letters .letter-alert {
+    background: #c14645 !important;
+}
+
+/* Win / Lose */
+
+.end-phrase {
+    font-size: 20px;
+    font-weight: 500;
+    margin: auto auto 0px auto;
+    color: #191919;
+}
+
+.end-points {
+    font-weight: 500;
+    margin: auto auto 0px auto;
+    color: #191919;
+}
+
+.win {
+    background-color: #029740;
+}
+
+.lose {
+    background-color: #c14645;
+}
+
+.end-screen {
+    border-radius: 50px;
+    padding: 10px 0px 10px 0px;
+    width: 50%;
+    margin: 0px auto 0px auto;
+}
+
+.replay {
+    margin: 10px auto 10px auto !important;
+    display: flex;
+}
+
+/* Scoreboard */
+
+.scoreboard {
+    padding: 0px 10px 0px 10px;
+}
+
+.score-line {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #191919;
+    padding: 0px 20px 0px 20px;
+}
+
+/* Autres */
+
+.bottom {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    background-color: #191919;
+}
+
+.credits {
+    align-content: bottom;
+}

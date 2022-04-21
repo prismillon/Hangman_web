@@ -1,0 +1,81 @@
+
+<!DOCTYPE html>
+<html>
+{{ template "head" . }}
+
+<body>
+
+    <!-- BODY -->
+    <section class="left-side">
+        <h1 class="text-center">Hangman-web</h1>
+
+        <div class="window">
+            <div class="topbar">
+                <div class="title text-center">
+                    Hangman web - Game window
+                </div>
+                <div class="buttons">
+                    <div class="green">
+                    </div>
+                    <div class="yellow">
+                    </div>
+                    <div class="red">
+                        <a class="rickroll" href="https://youtu.be/dQw4w9WgXcQ" target="_blank"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="content">
+                <p id="current-word" class="text-center">{{ .Current }}</p>
+                {{if .IsRunning}}
+                    <form action="/hangman" method="POST" autocomplete="off"> <!-- MERCI RAPHAEL !!!!!!!!!-->
+                        <label for="entry">-> </label>
+                        <input type="text" class="entry" name="entry" autofocus />
+                        <input class="button" type="submit" value="Envoyer" />
+                    </form>
+                {{else}}
+                    {{if eq .ErrorLeft 0}}
+                        <div class="end-screen lose">
+                            <p class="end-phrase text-center">Tu as perdu !</p>
+                            <p class="end-points text-center">Tu as perdu {{ .MmrDiff }} Hangman Points ! </p>
+                        </div>
+                    {{else}}
+                        <div class="end-screen win">
+                            <p class="end-phrase text-center">Bravo ! Tu as gagné !</p>
+                            <p class="end-points text-center">Tu as gagné {{ .MmrDiff }} Hangman Points ! </p>
+                        </div>
+                    {{end}}
+                    <form action="/reset" method="POST">
+                        <input class="button replay" type="submit" value="Rejouer !" />
+                    </form>
+                    <p class="text-center"><a href="/leaderboard">Voir le LeaderBoard</a></p>
+                {{end}}
+
+                {{if .BadChar}}
+                    <p>Merci de n'utiliser que des lettres.<br />Vous pouvez entrer des lettres ou des mots.</p>
+                {{end}}
+            </div>
+        </div>
+        <div class="bottom">
+            <p class="credits text-center">Projet par Thomas WEBER, Pierre-Hervé POIRIER, Luka GARCIA</p>
+        </div>
+    </section>
+
+    <section class="right-side">
+        <img src="assets/images/hangman-{{ .ErrorLeft }}.png"/>
+        <p>Nombre d'essais restants : {{ .ErrorLeft }}</p>
+        <div class="used-letters">
+            {{$repet := .Repetition}}
+            {{range $letter := .UsedLetters}}
+                {{if eq $letter $repet}}
+                <p class="letter letter-alert">{{$letter}}</p>
+                {{else}}
+                <p class="letter">{{$letter}}</p>
+                {{end}} 
+            {{end}}
+        </div>
+    </section>
+
+</body>
+
+</html>
+
